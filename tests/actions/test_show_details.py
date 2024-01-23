@@ -7,7 +7,7 @@ data = [
     "File size in bytes: 0\n",
     "File type: file\n",
     "File extension: .txt\n",
-    "Last modified date: 2023-11-22\n"
+    "Last modified date: 2024-01-23\n"
     ]
 
 data_for_file_without_extension = [
@@ -15,7 +15,7 @@ data_for_file_without_extension = [
     "File size in bytes: 0\n",
     "File type: file\n",
     "File extension: [no extension]\n",
-    "Last modified date: 2023-11-22\n"
+    "Last modified date: 2024-01-23\n"
     ]
 
 
