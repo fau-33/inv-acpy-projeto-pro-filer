@@ -27,3 +27,19 @@ def test_show_disk_usage_order(tmp_context, capsys):
     small_file_index = captured.out.find("small_file.txt")
 
     assert large_file_index > medium_file_index > small_file_index
+
+    # Additional check: Check if the total size is correct
+    total_size_index = captured.out.find("Total size:")
+    assert total_size_index != -1
+
+    # Extract and parse the total size from the output
+    total_size_str = captured.out[
+        total_size_index + len("Total size:"):
+    ].strip()
+    total_size = int(total_size_str)
+
+    # Calculate the expected total size based on the file sizes in tmp_context
+    expected_total_size = sum((i * 1000) for i in range(3, 6))
+
+    # Assert that the calculated total size matches the expected total size
+    assert total_size == expected_total_size
