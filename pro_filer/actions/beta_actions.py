@@ -1,11 +1,16 @@
 """Arquivo que estudantes devem editar"""
 
 
+def contar_barra(path):
+    barra = '/'
+    return sum(1 for char in path if char == barra)
+
+
 def show_deepest_file(context):
     if not context["all_files"]:
         print("No files found")
     else:
-        deepest_file = max(context["all_files"], key=len)
+        deepest_file = max(context["all_files"], key=contar_barra)
         print(f"Deepest file: {deepest_file}")
 
 
